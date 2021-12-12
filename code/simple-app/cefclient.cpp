@@ -48,7 +48,6 @@ namespace resource_manager {
 
         // Add example Providers to the CefResourceManager.
         void SetupResourceManager(CefRefPtr<CefResourceManager> resource_manager) {
-            std::cout<<"setting up the resource manager"<<std::endl;
             if (!CefCurrentlyOn(TID_IO)) {
                 // Execute on the browser IO thread.
                 CefPostTask(TID_IO, base::Bind(SetupResourceManager, resource_manager));

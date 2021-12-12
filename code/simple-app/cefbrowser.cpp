@@ -32,6 +32,7 @@ namespace resource_manager {
 #endif
                 }
             }
+
             void OnContextInitialized() OVERRIDE {
                 // Create the browser window
                 shared::CreateBrowser(new Client(), GetStartupURL(), CefBrowserSettings());
@@ -45,7 +46,6 @@ namespace resource_manager {
 
 namespace shared{
     CefRefPtr<CefApp> CreateBrowserProcessApp() {
-        std::cout<<"creating browser a app"<<std::endl;
         return new resource_manager::BrowserApp();
     }
 } // namespace shared
